@@ -40,7 +40,10 @@ public class SysDepartController extends BaseController {
     public List<SysDepart> selById(@ApiParam(value = "id") @RequestParam Integer id) {
 
         log.info("执行查询");
-
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
         return sysDepartService.selById(id);
     }
 
