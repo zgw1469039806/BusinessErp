@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingwei.um.mapper.SupplierInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingwei.um.entity.SupplierInfo">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="splr_name" property="splrName" />
+        <result column="splr_mobile" property="splrMobile" />
+        <result column="splr_province" property="splrProvince" />
+        <result column="splr_city" property="splrCity" />
+        <result column="splr_district" property="splrDistrict" />
+        <result column="splr_address" property="splrAddress" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+        <result column="isDelete" property="isDelete" />
+    </resultMap>
+
+</mapper>

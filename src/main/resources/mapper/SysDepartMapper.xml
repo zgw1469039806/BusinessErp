@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingwei.um.mapper.SysDepartMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingwei.um.entity.SysDepart">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="level" property="level"/>
+        <result column="lv" property="lv"/>
+        <result column="seq" property="seq"/>
+        <result column="remark" property="remark"/>
+        <result column="maturity_time" property="maturityTime"/>
+        <result column="operatorId" property="operatorId"/>
+        <result column="modified_time" property="modifiedTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="is_delete" property="isDelete"/>
+    </resultMap>
+
+    <resultMap id="Bm" type="com.lingwei.um.entity.SysDepart">
+        <id property="id" column="id"/>
+        <collection property="userInfo" ofType="com.lingwei.um.entity.UserInfo">
+            <result property="depId" column="depId"/>
+            <association property="memberInfo" javaType="com.lingwei.um.entity.MemberInfo">
+                <id property="id" column="id"/>
+                <result property="userId" column="user_id"/>
+                <result property="mbrName" column="mbr_name"/>
+                <result property="mbrMobile" column="mbr_mobile"/>
+                <result property="mbrAddress" column="mbr_address"/>
+                <result property="mbrIntegral" column="mbr_integral"/>
+                <result property="modifiedTime" column="modified_time"/>
+                <result property="createTime" column="create_time"/>
+                <result property="isDelete" column="isDelete"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="selById" resultMap="Bm" parameterType="int">
+        SELECT m.*
+        FROM
+            user_info u,
+            member_info m,
+            sys_depart s
+        where u.id = m.user_id
+          and u.depId = s.id
+          and s.id = #{id}
+    </select>
+
+</mapper>

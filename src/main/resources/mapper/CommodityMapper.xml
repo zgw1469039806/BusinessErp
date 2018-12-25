@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingwei.um.mapper.CommodityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingwei.um.entity.Commodity">
+        <id column="id" property="id" />
+        <result column="dep_id" property="depId" />
+        <result column="cmdy_type" property="cmdyType" />
+        <result column="cmdy_type_name" property="cmdyTypeName" />
+        <result column="cmdy_name" property="cmdyName" />
+        <result column="cmdy_description" property="cmdyDescription" />
+        <result column="cmdy_unit_price" property="cmdyUnitPrice" />
+        <result column="cmdy_inventory" property="cmdyInventory" />
+        <result column="create_time" property="createTime" />
+        <result column="modified_time" property="modifiedTime" />
+        <result column="is_delete" property="isDelete" />
+    </resultMap>
+
+</mapper>

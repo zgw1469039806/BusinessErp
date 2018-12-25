@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingwei.um.mapper.CommodityOrderPropMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lingwei.um.entity.CommodityOrderProp">
+        <id column="id" property="id" />
+        <result column="order_id" property="orderId" />
+        <result column="mbr_id" property="mbrId" />
+        <result column="dep_id" property="depId" />
+        <result column="cmd_id" property="cmdId" />
+        <result column="cmd_name" property="cmdName" />
+        <result column="cmd_number" property="cmdNumber" />
+        <result column="cmd_price" property="cmdPrice" />
+    </resultMap>
+
+</mapper>
